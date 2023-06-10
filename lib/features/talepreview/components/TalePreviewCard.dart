@@ -33,8 +33,8 @@ class TalePreviewCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 220.w,
-              height: 250.h,
+              width: 230.w,
+              height: 280.h,
               margin: EdgeInsets.all(5.w),
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
@@ -141,7 +141,7 @@ class TalePreviewCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "author".tr(),
+                        'author'.tr(),
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               fontFamily: 'Poppins',
                               fontSize: 14.sp,

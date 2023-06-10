@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReadCounter extends StatefulWidget {
@@ -13,6 +14,7 @@ class ReadCounter extends StatefulWidget {
 class ReadCounterState extends State<ReadCounter> {
   @override
   Widget build(BuildContext context) {
+
     return Container(
       width: 700.w,
       child: Row(
@@ -21,10 +23,10 @@ class ReadCounterState extends State<ReadCounter> {
           SizedBox(
             width: 450.w,
             child: Text(
-              'You have read ${widget.counter} Books!',
+              'counter'.tr(args: [widget.counter.toString(),]),
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                     fontFamily: 'Poppins',
-                    fontSize: 15.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
                     overflow: TextOverflow.ellipsis,
                   ),

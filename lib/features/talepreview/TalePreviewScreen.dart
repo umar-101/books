@@ -22,6 +22,8 @@ class TalePreviewScreen extends StatefulWidget {
 }
 
 class _TalePreviewScreenState extends State<TalePreviewScreen> {
+  bool english = false;
+
   @override
   void didChangeDependencies() {
     final TalePreviewBloc talePreviewBloc =
@@ -38,21 +40,30 @@ class _TalePreviewScreenState extends State<TalePreviewScreen> {
           actions: [
             GestureDetector(
               onTap: () {
-                context.setLocale(Locale('en'));
-
-                print(context.locale.toString());
+                context.setLocale(const Locale('en'));
+                setState(() {
+                  english = true;
+                });
               },
               child: Container(
                 width: 80,
                 height: 35,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                decoration: english == true
+                    ? BoxDecoration(
+                        color: Colors.blue.shade300,
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                    : BoxDecoration(
+                        color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                 child: Center(
                   child: Text(
                     'EN',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: english ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -60,23 +71,29 @@ class _TalePreviewScreenState extends State<TalePreviewScreen> {
             SizedBox(width: 10),
             GestureDetector(
               onTap: () {
-                context.setLocale(Locale('de'));
-
-                print(context.locale.toString());
+                context.setLocale(const Locale('de'));
+                setState(() {
+                  english = false;
+                });
               },
               child: Container(
                 width: 80,
                 height: 35,
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade300,
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                decoration: !english
+                    ? BoxDecoration(
+                        color: Colors.blue.shade300,
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                    : BoxDecoration(
+                        color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                 child: Center(
                   child: Text('DE',
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white)),
+                          color: !english ? Colors.white : Colors.black)),
                 ),
               ),
             ),
