@@ -35,7 +35,7 @@ class TaleScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          TalePreviewCard(talePreview: talePreview,),
+                          TalePreviewCard(talePreview: talePreview, navigate: false,),
                           const SizedBox(height: 30),
                           InkWell(
                               onTap: () async {

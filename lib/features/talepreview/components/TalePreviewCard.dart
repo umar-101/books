@@ -11,17 +11,20 @@ import 'package:talepreview/router/router.dart';
 
 class TalePreviewCard extends StatelessWidget {
   final TalePreview talePreview;
+  final bool navigate;
 
   const TalePreviewCard({
     Key? key,
     required this.talePreview,
+    this.navigate=true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        AutoRouter.of(context).push(TaleScreenRoute(talePreview: talePreview));
+        if (navigate){
+        AutoRouter.of(context).push(TaleScreenRoute(talePreview: talePreview));}
       },
       child: Container(
         height: 420.h,
