@@ -27,7 +27,7 @@ class TalePreviewCard extends StatelessWidget {
         AutoRouter.of(context).push(TaleScreenRoute(talePreview: talePreview));}
       },
       child: Container(
-        height: 420.h,
+        height: 500.h,
         margin: EdgeInsets.symmetric(horizontal: 8.w),
         decoration: BoxDecoration(
             color: Color(0xffFFFEF2),
