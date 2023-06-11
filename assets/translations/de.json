@@ -1,6 +1,6 @@
 {
   "greeting": "Willkommen!",
-  "counter":"Sie haben 0 Bücher gelesen",
-  "author":"Autor"
-  
+  "counter":"Sie haben {} Bücher gelesen",
+  "author":"Autor:",
+  "grade": "Grad"
 }
