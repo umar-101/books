@@ -22,7 +22,7 @@ class TalePreviewScreen extends StatefulWidget {
 }
 
 class _TalePreviewScreenState extends State<TalePreviewScreen> {
-  bool english = false;
+  bool english = true;
 
   @override
   void didChangeDependencies() {
